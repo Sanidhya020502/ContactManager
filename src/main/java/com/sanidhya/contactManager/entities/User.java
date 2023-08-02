@@ -36,7 +36,7 @@ public class User {
     private String about;
 
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY, mappedBy ="user")  // ek user delete to uske sare contacts delete
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,orphanRemoval = true)  // ek user delete to uske sare contacts delete
     private List<Contact> contacts = new ArrayList<>();
 
     public List<Contact> getContacts() {
